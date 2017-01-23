@@ -1,0 +1,11 @@
+{
+  "name": "cnodexpress",
+  "version": "0.0.1",
+  "description": "An implements to Cnode, developed with Node+Express+Handlebars, using Cnode api.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wan Benyu",
+  "license": "MIT"
+}
