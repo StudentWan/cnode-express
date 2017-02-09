@@ -13,31 +13,11 @@
 
         <div class="inner no-padding">
             <div id="topic_list">
-
-                <div class='cell'>
-                    <a class="user_avatar pull-left" href="#">
-                        <img src="" title="avatar1" />
-                    </a>
-                    <span class="reply_count pull-left">
-                <span class="count_of_replies" title="回复数">224</span>
-                    <span class="count_seperator">/</span>
-                    <span class="count_of_visits" title='点击数'>55588</span>
-                    </span>
-                    <a class='last_time pull-right' href="#">
-                        <img class="user_small_avatar" src="" title="avatar2">
-                        <span class="last_active_time">20 小时前</span>
-                    </a>
-                    <div class="topic_title_wrapper">
-                        <span class='put_top'>置顶</span>
-                        <a class='topic_title' href='#' title='《一起学 Node.js》彻底重写完毕'>《一起学 Node.js》彻底重写完毕 </a>
-                    </div>
-                    <hr>
-                </div>
+            </div>
 
             </div>
         </div>
     </div>
-</div>
 
 <script lang="javascript">
     $(document).ready(function() {
@@ -46,7 +26,14 @@
             method:"GET",
             dataType:"json",
             success:function(data){
-                alert(data.data[0].content);
+                var divshow = $("#topic_list");
+                divshow.text("");
+                for(var i = 0; i < data.data.length; i++) {
+                divshow.append("<a class='user_avatar pull-left' href='#'> <img src='" + data.data[i].author.avatar_url + "' title='avatar1' /> </a>");
+                divshow.append("<span class='reply_count pull-left'> <span class='count_of_replies' title='回复数'>&nbsp" + data.data[i].reply_count + "</span> <span class='count_seperator'>/</span> <span class='count_of_visits' title='点击数'>" + data.data[i].visit_count + "</span> </span>");
+                divshow.append("<a class='last_time pull-right' href='#'> <span class='last_active_time'>" + data.data[i].last_reply_at + "</span> </a>");
+                divshow.append("<div class='topic_title_wrapper'> <a class='topic_title' href='#' title='" + data.data[i].title + "'>&nbsp" + data.data[i].title + "</a> </div> <hr>");
+                }
             }
         });
     });

@@ -1,0 +1,24 @@
+    .row{
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+    .user_avatar img, .user_big_avatar img {
+      width: 30px;
+      height: 30px;
+      border-radius: 3px;
+    }
+    .count_of_replies {
+      color: rgb(158, 120, 192);
+    }
+    .count_of_visits {
+      font-size: 10px;
+      color: rgb(180, 180, 180);
+    }
+    .topic_title {
+      font-size: 1em;
+      width: 100%;
+    }
+    #topic_list {
+      height:25px;
+      line-height:25px;
+    }

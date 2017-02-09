@@ -17,44 +17,42 @@
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="css/jumbotron.css" rel="stylesheet">
-
-  <style type="text/css">
-    .row{
-      margin-top: 4px;
-      margin-bottom: 4px;
-    }
-  </style>
+  <link href="css/main.css" rel="stylesheet">
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header" aria-orientation="horizontal">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-          aria-controls="navbar">
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header" aria-orientation="horizontal">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand" href="#"><img alt="CnodeJS" src="logo/cnodejs_light.svg" width="80px" height="22px"></a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="What do you want?">
+              <a class="navbar-brand" href="#"><img alt="CnodeJS" src="/logo/cnodejs_light.svg" width="80px" height="22px"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="What do you want?">
+                </div>
+                <button type="submit" class="btn btn-success">搜索</button>
+              </form>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span> 主页</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+              </ul>
+            </div>
           </div>
-          <button type="submit" class="btn btn-success">搜索</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-home"></span> 主页</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
-        </ul>
+        </nav>
       </div>
     </div>
-  </nav>
-
-  <div class="container">
 
     {{{body}}}
 
@@ -66,7 +64,6 @@
         </footer>
       </div>
     </div>
-
   </div>
 
   <!-- /container -->
