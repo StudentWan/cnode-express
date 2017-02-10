@@ -1,5 +1,6 @@
 var config = require('config-lite');
 var express = require('express');
+var routes = require('./routes');
 var path = require('path');
 var exphbs = require('express-handlebars');
 
@@ -19,9 +20,8 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function (req, res) {
-    res.render('home');
-});
+//路由
+routes(app);
 
 app.listen(config.port, function() {
     console.log('Listening at port ' + config.port);

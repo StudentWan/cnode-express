@@ -10,31 +10,40 @@
     </div>
 
     <div class="col-md-10 column">
-
         <div class="inner no-padding">
             <div id="topic_list">
-            </div>
-
+                {{#each data}}
+                <a class="user_avatar pull-left" href="#">
+                    <img src={{author.avatar_url}} title="avatar1" />
+                </a>
+                <span class="reply_count pull-left">
+                <span class="count_of_replies" title="回复数">&nbsp{{reply_count}}</span>
+                <span class="count_seperator">/</span>
+                <span class="count_of_visits" title='点击数'>{{visit_count}}</span>
+                </span>
+                <a class='last_time pull-right' href="#">
+                    <span class="last_active_time">{{last_reply_at}}</span>
+                </a>
+                <div class="topic_title_wrapper">
+                    <a class='topic_title' href='#' title={{title}}>&nbsp{{title}}</a>
+                </div>
+                <hr> 
+                {{/each}}
             </div>
         </div>
     </div>
+</div>
 
-<script lang="javascript">
-    $(document).ready(function() {
-        $.ajax({
-            url:"https://cnodejs.org/api/v1/topics/?page=1",
-            method:"GET",
-            dataType:"json",
-            success:function(data){
-                var divshow = $("#topic_list");
-                divshow.text("");
-                for(var i = 0; i < data.data.length; i++) {
-                divshow.append("<a class='user_avatar pull-left' href='#'> <img src='" + data.data[i].author.avatar_url + "' title='avatar1' /> </a>");
-                divshow.append("<span class='reply_count pull-left'> <span class='count_of_replies' title='回复数'>&nbsp" + data.data[i].reply_count + "</span> <span class='count_seperator'>/</span> <span class='count_of_visits' title='点击数'>" + data.data[i].visit_count + "</span> </span>");
-                divshow.append("<a class='last_time pull-right' href='#'> <span class='last_active_time'>" + data.data[i].last_reply_at + "</span> </a>");
-                divshow.append("<div class='topic_title_wrapper'> <a class='topic_title' href='#' title='" + data.data[i].title + "'>&nbsp" + data.data[i].title + "</a> </div> <hr>");
-                }
-            }
-        });
-    });
-</script>
+<div class="row clearfix">
+    <div class="col-md-10 column pull-right">
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+</div>

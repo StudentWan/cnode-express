@@ -1,4 +1,4 @@
-function getTimeInfo(str) {
+var getTimeInfo = function getTimeInfo(str) {
         if (!str) {
             return ''
         }
@@ -20,3 +20,5 @@ function getTimeInfo(str) {
             return parseInt(time / 31536000000) + '年前';
         }
     }
+
+module.exports = getTimeInfo;
