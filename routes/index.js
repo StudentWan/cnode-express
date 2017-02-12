@@ -1,6 +1,9 @@
 module.exports = function(app) {
     app.get('/', function(req, res) {
-        res.redirect('/topiclist');
+        if(req.query.current_page == undefined) {
+            req.query.current_page = 1;
+        }
+        res.redirect('/topiclist?current_page=' + req.query.current_page);
     });
 
     app.use('/topiclist', require('./topiclist'));

@@ -22,7 +22,7 @@
                 <span class="count_of_visits" title='点击数'>{{visit_count}}</span>
                 </span>
                 <a class='last_time pull-right' href="#">
-                    <span class="last_active_time">{{last_reply_at}}</span>
+                    <span class="last_active_time">{{create_at}}</span>
                 </a>
                 <div class="topic_title_wrapper">
                     <a class='topic_title' href='#' title={{title}}>&nbsp{{title}}</a>
@@ -36,14 +36,14 @@
 
 <div class="row clearfix">
     <div class="col-md-10 column pull-right">
-        <ul class="pagination">
-            <li><a href="#">&laquo;</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">&raquo;</a></li>
+        <ul class="pagination" current_page={{pagedata.current_page}}>
+            <li style="display: {{pagedata.style1}}"><a>...</a></li>
+            <li class={{pagedata.class1}}><a href={{pagedata.href1}}>{{pagedata.page1}}</a></li>
+            <li class={{pagedata.class2}}><a href={{pagedata.href2}}>{{pagedata.page2}}</a></li>
+            <li class={{pagedata.class3}}><a href={{pagedata.href3}}>{{pagedata.page3}}</a></li>
+            <li class={{pagedata.class4}}><a href={{pagedata.href4}}>{{pagedata.page4}}</a></li>
+            <li class={{pagedata.class5}}><a href={{pagedata.href5}}>{{pagedata.page5}}</a></li>
+            <li style="display: {{pagedata.style2}}"><a>...</a></li>
         </ul>
     </div>
 </div>
