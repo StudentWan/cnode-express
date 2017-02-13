@@ -1,11 +1,11 @@
 <div class="row clearfix">
     <div class="col-md-2 column">
-        <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#">全部</a></li>
-            <li><a href="#">精华</a></li>
-            <li><a href="#">分享</a></li>
-            <li><a href="#">问答</a></li>
-            <li><a href="#">招聘</a></li>
+        <ul class="nav nav-pills nav-stacked" current_tab={{tabdata.tab}}>
+            <li class={{tabdata.class1}}><a href="?current_tab=all&current_page=1">全部</a></li>
+            <li class={{tabdata.class2}}><a href="?current_tab=good&current_page=1">精华</a></li>
+            <li class={{tabdata.class3}}><a href="?current_tab=share&current_page=1">分享</a></li>
+            <li class={{tabdata.class4}}><a href="?current_tab=ask&current_page=1">问答</a></li>
+            <li class={{tabdata.class5}}><a href="?current_tab=job&current_page=1">招聘</a></li>
         </ul>
     </div>
 
@@ -16,22 +16,24 @@
                 <a class="user_avatar pull-left" href="#">
                     <img src={{author.avatar_url}} title="avatar1" />
                 </a>
-                <span class="reply_count pull-left">
-                <span class="count_of_replies" title="回复数">&nbsp{{reply_count}}</span>
-                <span class="count_seperator">/</span>
-                <span class="count_of_visits" title='点击数'>{{visit_count}}</span>
-                </span>
-                <a class='last_time pull-right' href="#">
-                    <span class="last_active_time">{{create_at}}</span>
-                </a>
-                <div class="topic_title_wrapper">
-                    <a class='topic_title' href='#' title={{title}}>&nbsp{{title}}</a>
-                </div>
-                <hr> 
-                {{/each}}
-            </div>
-        </div>
-    </div>
+                <span class="reply_count pull-left" style="width: 80px;">
+<span class="count_of_replies" title="回复数">&nbsp{{reply_count}}</span>
+<span class="count_seperator">/</span>
+<span class="count_of_visits" title='点击数'>{{visit_count}}</span>
+</span>
+<a class='last_time pull-right' href="#">
+    <span class="last_active_time">{{create_at}}</span>
+</a>
+<div class="topic_title_wrapper">
+    {{#ifCond good top}}
+    <span class="topiclist_tab">{{tab}}</span> {{else}}
+    <span class="put_top_good">{{tab}}</span> {{/ifCond}}
+    <a class='topic_title' href='#' title={{title}}>&nbsp{{title}}</a>
+</div>
+<hr> {{/each}}
+</div>
+</div>
+</div>
 </div>
 
 <div class="row clearfix">
@@ -44,6 +46,6 @@
             <li class={{pagedata.class4}}><a href={{pagedata.href4}}>{{pagedata.page4}}</a></li>
             <li class={{pagedata.class5}}><a href={{pagedata.href5}}>{{pagedata.page5}}</a></li>
             <li style="display: {{pagedata.style2}}"><a>...</a></li>
-        </ul>
-    </div>
+</ul>
+</div>
 </div>

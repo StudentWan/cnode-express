@@ -18,6 +18,26 @@
       font-size: 1em;
       width: 100%;
     }
+    .put_top_good {
+      background: limegreen;
+      padding: 2px 4px;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      color: white;
+      font-size: 12px;
+    }
+    .topiclist_tab {
+      background: #e5e5e5;
+      color: #999;
+      padding: 2px 4px;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      font-size: 12px;
+    }
     #topic_list {
       height:25px;
       line-height:25px;

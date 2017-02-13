@@ -10,10 +10,16 @@ app.engine('.hbs', exphbs({
     extname: '.hbs',
     defaultLayout: 'main',
     helpers: {
-        section: function (name, block) {
+        section: function (name, options) {
             if (!this._sections) this._sections = {};
-            this._sections[name] = block.fn(this);
+            this._sections[name] = options.fn(this);
             return null;
+        },
+        ifCond: function (v1, v2, options) {
+            if (v1 === v2) {
+                return options.fn(this);
+            }
+            return options.inverse(this);
         }
     }
 }));
@@ -23,6 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 //路由
 routes(app);
 
-app.listen(config.port, function() {
+app.listen(config.port, function () {
     console.log('Listening at port ' + config.port);
 });
