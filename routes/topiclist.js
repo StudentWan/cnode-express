@@ -4,6 +4,12 @@ var getTimeInfo = require('../utils/gettimeinfo.js');
 var router = express.Router();
 
 router.get('/', function (req, res, next) {
+    if (req.query.current_page == undefined) {
+        req.query.current_page = 1;
+    }
+    if (req.query.current_tab == undefined) {
+        req.query.current_tab = 'all';
+    }
     var tabdata = {}
     if (req.query.current_tab == 'all') {
         tabdata = {
