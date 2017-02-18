@@ -28,31 +28,37 @@
                         </h3>
                     </div>
                     <div class="panel-body">
+                        
                         {{#each data.replies}}
-                        <hr>
                         <p>
                             <a class="user_avatar pull-left" style="width:40px;" href="#">
-                                <img src={{author.avatar_url}} title="avatar1" />
-                            </a>
-                            <a href="#">
-                                <span class="last_active_time">{{create_at}}</span>
-                            </a>
-                        </p>
-                        {{{content}}} {{/each}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 column">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            作者
-                        </h3>
-                    </div>
-                    <div class="panel-body">
-                        {{data.author.loginname}}
-                    </div>
-                </div>
-            </div>
+<img src={{author.avatar_url}} title="avatar1" />
+</a>
+<span>{{author.loginname}}</span>
+<a>
+    <span class="last_active_time">{{create_at}}</span>
+</a>
+</p>
+{{{content}}} 
+<hr>
+{{/each}}
+</div>
+</div>
+</div>
+<div class="col-md-3 column">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                作者
+            </h3>
+        </div>
+        <div class="panel-body">
+                                        <a class="user_avatar pull-left" style="width:40px;" href="#">
+<img src={{data.author.avatar_url}} title="avatar1" />
+</a>
+            {{data.author.loginname}}
         </div>
     </div>
+</div>
+</div>
+</div>
