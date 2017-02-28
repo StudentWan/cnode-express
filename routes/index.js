@@ -5,5 +5,5 @@ module.exports = function (app) {
 
     app.use('/topiclist', require('./topiclist'));
     app.use('/topic', require('./topic'));
-
+    app.use('/signin', require('./signin'));
 }

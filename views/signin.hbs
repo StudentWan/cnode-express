@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>{{data.title}} Cnode By Wan</title>
+  <title>Sign In</title>
 
   <!-- JQuery -->
   <script src="jquery-3.1.1.min.js"></script>
@@ -46,17 +46,26 @@
               </form>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="/"><span class="glyphicon glyphicon-home"></span> 主页</a></li>
-                <li><a href="/signin"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
               </ul>
             </div>
           </div>
         </nav>
       </div>
     </div>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<form role="form">
+				<div class="form-group">
+					 <label for="accessTokenInput">AccessToken</label><input type="text" class="form-control" id="accessTokenInput" />
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
 
-    {{{body}}}
-
-    <div class="row clearfix">
+<div class="row clearfix">
       <div class="col-md-12 column">
         <hr>
         <footer>

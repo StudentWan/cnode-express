@@ -3,6 +3,8 @@ var express = require('express');
 var routes = require('./routes');
 var path = require('path');
 var exphbs = require('express-handlebars');
+var session = require('express-session');
+var uuid = require('node-uuid');
 
 var app = express();
 
@@ -25,7 +27,15 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(session({
+    genid: function(req) {
+        return uuid.v1();
+    },
+    secret: config.session.secret,
+    cookie: {
+        maxAge: config.session.maxAge
+    }
+}));
 //路由
 routes(app);
 
