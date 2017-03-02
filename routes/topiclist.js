@@ -830,7 +830,8 @@ router.get('/', function (req, res, next) {
             res.render('home', {
                 data: data,
                 tabdata: tabdata,
-                pagedata: pagedata
+                pagedata: pagedata,
+                loginCheck: req.session.user
             });
         });
 

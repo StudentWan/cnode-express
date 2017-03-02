@@ -5,6 +5,10 @@ var path = require('path');
 var exphbs = require('express-handlebars');
 var session = require('express-session');
 var uuid = require('node-uuid');
+var formidable = require('express-formidable');
+var EventEmitter = require('events').EventEmitter;
+var eventListener = new EventEmitter();
+eventListener.setMaxListeners(15);
 
 var app = express();
 
@@ -36,6 +40,7 @@ app.use(session({
         maxAge: config.session.maxAge
     }
 }));
+app.use(formidable());
 //路由
 routes(app);
 

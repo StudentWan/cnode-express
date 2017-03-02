@@ -8,9 +8,11 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title>{{data.title}} Cnode By Wan</title>
-
+{{#if data.title}}
+  <title>{{data.title}} | Cnode By Wan</title>
+{{else}}
+  <title>Cnode By Wan</title>
+{{/if}}
   <!-- JQuery -->
   <script src="jquery-3.1.1.min.js"></script>
   <!-- Bootstrap core CSS -->
@@ -46,7 +48,12 @@
               </form>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="/"><span class="glyphicon glyphicon-home"></span> 主页</a></li>
+                {{#if loginCheck}}
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{loginCheck}}</a></li>
+                <li><a href="/signout"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>
+                {{else}}
                 <li><a href="/signin"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                {{/if}}
               </ul>
             </div>
           </div>
