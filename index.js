@@ -1,4 +1,5 @@
 var config = require('config-lite');
+var flash = require('connect-flash');
 var express = require('express');
 var routes = require('./routes');
 var path = require('path');
@@ -7,9 +8,9 @@ var session = require('express-session');
 var uuid = require('node-uuid');
 var formidable = require('express-formidable');
 var EventEmitter = require('events').EventEmitter;
+EventEmitter.defaultMaxListeners = 0;
 var eventListener = new EventEmitter();
-eventListener.setMaxListeners(15);
-
+eventListener.setMaxListeners(0);
 var app = express();
 
 app.engine('.hbs', exphbs({
@@ -40,7 +41,16 @@ app.use(session({
         maxAge: config.session.maxAge
     }
 }));
+app.use(flash());
 app.use(formidable());
+
+//添加模板必须变量
+app.use(function (req, res, next) {
+    res.locals.user = req.session.user;
+    res.locals.success = req.flash('success').toString();
+    res.locals.error = req.flash('error').toString();
+    next();
+});
 //路由
 routes(app);
 

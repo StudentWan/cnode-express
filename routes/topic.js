@@ -29,8 +29,7 @@ router.get('/', function (req, res, next) {
                 data.replies[i].create_at = getTimeInfo(data.replies[i].create_at); 
             }
             res.render('topic', {
-                data: data,
-                loginCheck: req.session.user
+                data: data
             });
         });
 });

@@ -15,9 +15,11 @@ router.post('/', checkNotLogin, function(req, res, next) {
                   var result = JSON.parse(sres.text);
                   if(result.success == true) {
                       req.session.user = result.loginname;
+                      req.flash('success', '登陆成功！');
                       return res.redirect('/topiclist');
                   } else {
-                      return res.redirect('/topiclist');
+                      req.flash('error', 'AccessToken错误！');
+                      return res.redirect('back');
                   }
               });
 });

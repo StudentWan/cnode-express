@@ -48,8 +48,8 @@
               </form>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="/"><span class="glyphicon glyphicon-home"></span> 主页</a></li>
-                {{#if loginCheck}}
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{loginCheck}}</a></li>
+                {{#if user}}
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{user}}</a></li>
                 <li><a href="/signout"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>
                 {{else}}
                 <li><a href="/signin"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
@@ -60,6 +60,7 @@
         </nav>
       </div>
     </div>
+    {{> notification}}
 
     {{{body}}}
 
