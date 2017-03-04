@@ -4,6 +4,7 @@ var checkLogin = require('../utils/check.js').checkLogin;
 
 router.get('/', checkLogin, function(req, res, next) {
     delete req.session.user;
+    delete req.session.accessToken;
     req.flash('success', '登出成功！');
     return res.redirect('back');
 });

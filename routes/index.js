@@ -7,4 +7,5 @@ module.exports = function (app) {
     app.use('/topic', require('./topic'));
     app.use('/signin', require('./signin'));
     app.use('/signout', require('./signout'));
+    app.use('/reply', require('./reply'));
 }

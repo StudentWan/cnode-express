@@ -15,7 +15,8 @@ router.post('/', checkNotLogin, function(req, res, next) {
                   var result = JSON.parse(sres.text);
                   if(result.success == true) {
                       req.session.user = result.loginname;
-                      req.flash('success', '登陆成功！');
+                      req.session.accessToken = accesstoken;
+                      req.flash('success', '登录成功！');
                       return res.redirect('/topiclist');
                   } else {
                       req.flash('error', 'AccessToken错误！');
