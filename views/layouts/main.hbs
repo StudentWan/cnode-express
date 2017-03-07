@@ -40,9 +40,9 @@
               <a class="navbar-brand" href="/"><img alt="CnodeJS" src="/logo/cnodejs_light.svg" width="80px" height="22px"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-              <form class="navbar-form navbar-left" role="search">
+              <form class="navbar-form navbar-left" role="search_content" action="/search" method="POST">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="What do you want?">
+                  <input type="text" name="search_content" class="form-control" placeholder="What do you want?" />
                 </div>
                 <button type="submit" class="btn btn-success">搜索</button>
               </form>
