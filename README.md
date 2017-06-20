@@ -1,4 +1,4 @@
-#cnodexpress
+# cnodexpress
 This is a practice project, developed with Node+ Express+ Handlebars.
 
 Mainly technology stacks:
@@ -12,11 +12,11 @@ Mainly technology stacks:
     express-session
 
     config-lite
-##Install
+## Install
 
 npm install
 
-##Run
+## Run
 If you installed supervisor, then type:
 
     supervisor --harmony index.js
